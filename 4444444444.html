@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trang Tri Ân</title>
+<meta name="description" content="Website tri ân và tạm biệt các bạn, với giao diện đẹp, nhạc nền và slideshow ảnh.">
+<meta name="keywords" content="tri ân, tạm biệt, slideshow, nhạc nền, website đẹp">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body {
+  margin:0;
+  padding:0;
+  font-family:'Poppins', sans-serif;
+  background:#001a6b;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  overflow:hidden;
+}
+
+h1 {
+  font-size:36px;
+  text-align:center;
+  margin-bottom:10px;
+  color:#ffdd00;
+  text-shadow: 2px 2px 8px #000;
+}
+
+h2 {
+  font-size:24px;
+  text-align:center;
+  margin-bottom:30px;
+  color:#fff;
+}
+
+.slideshow-container {
+  position:relative;
+  width:90%;
+  max-width:800px;
+  height:450px;
+  overflow:hidden;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+  margin-bottom:30px;
+}
+
+.slide {
+  width:100%;
+  height:100%;
+  position:absolute;
+  opacity:0;
+  transition:opacity 1s ease-in-out;
+  border-radius:20px;
+}
+
+.slide img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:20px;
+}
+
+.slide.active {opacity:1;}
+
+.footer {
+  text-align:center;
+  font-size:18px;
+  margin-top:20px;
+  color:#ffdd00;
+  text-shadow: 1px 1px 5px #000;
+  position:relative;
+  z-index:2;
+}
+
+/* Dòng chữ bay từ dưới lên */
+.marquee-container {
+  position:relative;
+  width:100%;
+  overflow:hidden;
+  height:60px;
+  margin-bottom:20px;
+}
+
+.marquee {
+  position:absolute;
+  width:100%;
+  bottom:-60px;
+  text-align:center;
+  font-size:20px;
+  color:#00ffea;
+  font-weight:600;
+  animation:marqueeUp 15s linear infinite;
+  text-shadow:1px 1px 3px #000;
+}
+
+@keyframes marqueeUp {
+  0% {bottom:-60px;}
+  100% {bottom:100%;} 
+}
+</style>
+</head>
+<body>
+
+<h1>Tri Ân Cô Và Các Bạn</h1>
+<h2>Cảm ơn bạn đã dành thời gian ghé thăm! Tạm biệt và hẹn gặp lại.</h2>
+
+<div class="slideshow-container">
+  <div class="slide active"><img src="https://s.ibytecdn.org/https://sf-static.upanhlaylink.com/img/image_20251119b2175b5ca7caa6f221189eea91b6f54e.jpg" alt="aa.jpg"></div>
+  <div class="slide"><img src="https://s.ibytecdn.org/https://sf-static.upanhlaylink.com/img/image_202511190cc8fb79d0068e2a0c9509a0035293d2.jpg" alt="bb.jpg"></div>
+  <div class="slide"><img src="https://s.ibytecdn.org/https://sf-static.upanhlaylink.com/img/image_20251119adf18a4d7675534d0fd1db47b29f279c.jpg" alt="cc.jpg"></div>
+  <div class="slide"><img src="https://s.ibytecdn.org/https://sf-static.upanhlaylink.com/img/image_2025111981776d34c92a14ae387143dc48773743.jpg" alt="vv.jpg"></div>
+</div>
+
+<!-- Dòng chữ bay từ dưới lên -->
+<div class="marquee-container">
+  <div class="marquee">
+    Chúc các bạn thành công, chúc các bạn ngày càng xinh đẹp, chúc các bạn có nhiều sức khỏe! ❤️
+  </div>
+</div>
+
+<div class="footer">
+  ❤️ DEV Trần Hữu Luân cảm ơn và tạm biệt các bạn! ❤️
+</div>
+
+<!-- Nhạc nền từ YouTube -->
+<div class="audio-container">
+  <iframe width="0" height="0" src="https://www.youtube.com/embed/U5HCJW4wtKI?autoplay=1&loop=1&playlist=U5HCJW4wtKI" title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+<script>
+// Slideshow tự động
+let slides = document.querySelectorAll('.slide');
+let current = 0;
+
+setInterval(() => {
+  slides[current].classList.remove('active');
+  current = (current + 1) % slides.length;
+  slides[current].classList.add('active');
+}, 4000); // 4s/lần chuyển
+</script>
+
+</body>
+</html>
